@@ -179,13 +179,11 @@ The API uses the following environment variables:
 ```
 Plants_Identification/
 ├── app.py                           # FastAPI application with CORS support
-├── requirements.txt                 # Python dependencies and versions
-├── Procfile                         # Railway/Heroku/Render deployment config
+├── Requirements.txt                 # Python dependencies and versions
+├── Procfile                         # Deployment configuration
 ├── runtime.txt                      # Python runtime version
 ├── .gitignore                       # Git ignore rules
-├── plant_species_Model_kaggle.h5    # Trained model (~300MB, auto-downloaded if missing)
-├── resnet_model_kaggle.keras        # Optional alternate model (~300MB)
-├── Data/                            # Dataset (class folders)
+├── readme.md                        # Project documentation
 └── plant-cnn-model_kaggle.ipynb     # Notebook (training/experiments)
 ```
 
