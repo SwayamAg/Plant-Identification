@@ -1,0 +1,42 @@
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Kaggle credentials and data
+.kaggle/
+
+# Model artifacts
+*.h5
+*.keras
+*.hdf5
+*.pb
+*.ckpt*
+plant_species_Model_kaggle.h5
+resnet_model_kaggle.keras
+plant_cnn_final.h5
+
+# Archives and datasets
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
+# Logs
+*.log
+logs/
+
