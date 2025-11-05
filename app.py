@@ -1,11 +1,14 @@
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+import os
+# Force CPU-only mode
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Reduce TensorFlow logging
 import tensorflow as tf
 import numpy as np
 from PIL import Image
 import io
-import os
 from typing import List
 import logging
 from contextlib import asynccontextmanager
