@@ -5,7 +5,20 @@ import os
 # Force CPU-only mode
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Reduce TensorFlow logging
+os.environ['CUDA_DEVICE_ORDER'] = 'PCI_BUS_ID'   # see issue #152
+os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'false'
+
 import tensorflow as tf
+# Disable GPU at TensorFlow level
+try:
+    tf.config.set_visible_devices([], 'GPU')
+    physical_devices = tf.config.list_physical_devices('GPU')
+    for device in physical_devices:
+        tf.config.experimental.set_memory_growth(device, False)
+        tf.config.set_logical_device_configuration(device, [])
+except:
+    pass
+
 import numpy as np
 from PIL import Image
 import io
